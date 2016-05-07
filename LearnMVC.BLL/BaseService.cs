@@ -23,6 +23,11 @@ namespace LearnMVC.BLL
 
         public T Add(T entity) { return CurrentRepository.Add(entity); }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public bool Update(T entity) { return CurrentRepository.Update(entity); }
 
         /// <summary>
