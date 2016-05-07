@@ -136,9 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Member\Controllers\" />
-    <Folder Include="Areas\Member\Models\" />
-    <Folder Include="Areas\Member\Views\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
