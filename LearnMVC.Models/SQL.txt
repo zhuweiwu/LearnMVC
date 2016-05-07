@@ -1,0 +1,96 @@
+﻿1.Create Table:
+
+CREATE TABLE [ZhuweiDB].[dbo].[custom](
+    [id] [int] IDENTITY(1,1) NOT NULL,
+    [cname] [nvarchar](50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+    [departID] [int] NOT NULL,
+    [age] [int] NOT NULL,
+    [ename] [nvarchar](50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+    [password] [nvarchar](50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+ CONSTRAINT [PK_custom] PRIMARY KEY CLUSTERED 
+(
+    [id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY];
+
+
+CREATE TABLE ZhuweiDB].[dbo].[department](
+    [id] [int] IDENTITY(1,1) NOT NULL,
+    [departname] [nvarchar](50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+    [description] [nchar](10) COLLATE Chinese_PRC_CI_AS NOT NULL,
+ CONSTRAINT [PK_department] PRIMARY KEY CLUSTERED 
+(
+    [id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+
+2.Insert Use T-SQL:
+
+USE ZhuweiDB;
+GO
+CREATE PROCEDURE [dbo].[spInsertCustom]
+@cname nvarchar(50),
+@ename nvarchar(50),
+@age int,
+@departID int,
+@password nvarchar(50)
+AS
+BEGIN
+insert into custom(cname,departID,age,ename,password) values (@cname,@departID,@age,@ename,@password)
+END
+ 
+RETURN @@Identity
+
+USE ZhuweiDB;
+GO;
+CREATE PROCEDURE [dbo].[spInsertDepartment]
+@departname nvarchar(50),
+@description nvarchar(50)
+AS
+BEGIN
+    insert into department(departname,description)values(@departname,@description)
+END
+ 
+RETURN @@Identity
+
+3.Update T-SQL :
+
+USE ZhuweiDB;
+GO
+CREATE PROCEDURE [dbo].[spupdatecustom] 
+@id int,
+@cname nvarchar(50),
+@departID int,
+@age int,
+@ename nvarchar(50),
+@password nvarchar(50)
+AS
+BEGIN
+    update 
+       custom 
+    set
+    cname = @cname,
+    departID = @departID,
+    age = @age,
+    ename = @ename,
+    password = @password
+    where id = @id
+END
+COMMIT TRAN
+
+
+USE ZhuweiDB;
+GO
+CREATE PROCEDURE [dbo].[spupdatedepart] 
+(
+@departname nvarchar(50),
+@description nchar(10),
+@id int
+)
+as
+UPDATE [dbo].[department]
+   SET [departname] = @departname
+      ,[description] = @departname
+ WHERE id=@id
