@@ -17,7 +17,15 @@ namespace LearnMVC.DAL
     public class MyDBContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<UserGroup> UserGroups { get; set; }
+
+
+
+        //public DbSet<UserGroup> UserGroups { get; set; }
+
+        public DbSet<Role> Roles { get; set; }
+
+        public DbSet<UserRoleRelation> UserRoleRelations { get; set; }
+
         public DbSet<UserConfig> UserConfig { get; set; }
 
         public MyDBContext()
