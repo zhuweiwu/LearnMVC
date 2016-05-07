@@ -25,6 +25,11 @@ namespace LearnMVC.BLL
 
         public bool Update(T entity) { return CurrentRepository.Update(entity); }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public bool Delete(T entity) { return CurrentRepository.Delete(entity); }
     }
 }
