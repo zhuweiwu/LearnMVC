@@ -64,19 +64,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Role.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="UserConfig.cs" />
-    <Compile Include="UserGroup.cs" />
-    <Compile Include="UserRoleRelation.cs" />
+    <Compile Include="old\Role.cs" />
+    <Compile Include="old\User.cs" />
+    <Compile Include="old\UserConfig.cs" />
+    <Compile Include="old\UserGroup.cs" />
+    <Compile Include="old\UserRoleRelation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SQL.txt" />
+    <Content Include="old\SQL.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

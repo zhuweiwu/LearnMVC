@@ -6,9 +6,6 @@ namespace LearnMVC.IDAL
 {
     public interface InterfaceBaseRepository<T>
     {
-
-
-
         /// <summary>
         /// Add
         /// </summary>
